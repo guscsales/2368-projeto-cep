@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/node_modules/remixicon/fonts/remixicon.css" />
+    <link rel="stylesheet" href="/public/css/globals.css" />
+
+    <title>Busca CEP</title>
+  </head>
+  <body class="bg-gray-950">
+    <header class="p-4 flex justify-center lg:justify-start">
+      <div class="flex gap-1.5">
+        <i class="icon ri-search-eye-line text-2xl"></i>
+        <h1 class="heading heading--two">Busca CEP</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="container mt-6 lg:mt-8">
+        <header class="flex flex-col gap-1 text-center">
+          <h2 class="heading heading--one">Busque qualquer endereço...</h2>
+          <p class="text-sm text-gray-300 italic">
+            Digite o valor do CEP do endereço para coletar mais informações
+            sobre o mesmo.
+          </p>
+        </header>
+
+        <form id="form-cep" class="flex flex-col sm:flex-row gap-2 mt-4">
+          <input
+            type="text"
+            name="zip_code"
+            class="input"
+            placeholder="Exemplo: 01001000"
+          />
+          <button type="submit" class="button button--primary sm:basis-40">
+            Buscar
+          </button>
+        </form>
+      </section>
+
+      <section
+        id="zip-code-data-container"
+        class="container mt-4 lg:mt-10"
+        style="display: none"
+      >
+        <header>
+          <h2 class="heading heading--two">Resultado da busca</h2>
+        </header>
+
+        <div class="flex items-center gap-2 mt-3 lg:mt-6">
+          <div
+            id="zip-code-provider-logo"
+            class="w-20 h-11 bg-no-repeat rounded bg-left-center bg-cover"
+          ></div>
+          <div id="zip-code-title" class="heading heading--three"></div>
+        </div>
+
+        <div
+          id="zip-code-data-content"
+          class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-3 pb-8"
+        ></div>
+
+        <footer class="w-56 mx-auto">
+          <button id="new-search-button" class="button button--secondary">
+            Fazer nova pesquisa
+          </button>
+        </footer>
+      </section>
+
+      <section class="container mt-5">
+        <div
+          id="zip-code-loading"
+          class="card card--info"
+          style="display: none"
+        >
+          Carregando informações...
+        </div>
+
+        <div
+          id="zip-code-error"
+          class="card card--danger"
+          style="display: none"
+        >
+          CEP não encontrado
+        </div>
+      </section>
+    </main>
+
+    <script src="/node_modules/axios/dist/axios.min.js"></script>
+    <script src="/public/scripts/functions.js"></script>
+    <script src="/public/scripts/main.js"></script>
+  </body>
+</html>

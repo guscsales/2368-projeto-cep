@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* == COMPONENTS == */
+.heading {
+  @apply font-bold
+    m-0
+    text-white;
+}
+
+.heading--one {
+  @apply text-3xl
+    lg:text-4xl;
+}
+
+.heading--two {
+  @apply text-2xl;
+}
+
+.heading--three {
+  @apply text-xl;
+}
+
+.icon {
+  @apply text-white;
+}
+
+.input {
+  @apply w-full
+    rounded
+    p-5
+    border
+    border-solid
+    border-gray-400
+    bg-transparent
+    text-white
+    text-lg
+    placeholder:text-gray-400
+    hover:border-gray-200
+    focus:border-gray-50
+    focus:outline-transparent
+    transition-colors
+    duration-150
+    ease-linear;
+}
+
+.button {
+  @apply w-full
+    rounded
+    p-5
+    border-none
+    text-lg
+    font-bold
+    transition-colors
+    duration-150
+    ease-linear;
+  /* Você pode adicionar breakpoints aqui também! */
+  /* lg:bg-red-500 */
+}
+
+.button--primary {
+  @apply bg-gray-300
+  text-gray-800
+  hover:bg-gray-50
+  hover:text-gray-950;
+}
+
+.button--secondary {
+  @apply bg-gray-700
+  text-gray-300
+  hover:bg-gray-800
+  hover:text-gray-100;
+}
+
+.card {
+  @apply flex 
+    gap-1
+    w-full
+    p-3
+    rounded
+    border
+    border-solid
+    border-gray-200;
+}
+
+.card--columns {
+  @apply flex-col;
+}
+
+.card--danger {
+  @apply border-red-500
+    bg-red-50
+    text-red-800;
+}
+
+.card--info {
+  @apply border-blue-500
+    bg-blue-50
+    text-blue-800;
+}
+
+.card__title {
+  @apply uppercase
+    text-sm
+    text-gray-200;
+}
+
+.card__content {
+  @apply text-lg
+    text-white;
+}
+
+/* Padrão BEM */
+/* 
+  Wrapper - Componente principal
+  Variações - Variações de qualquer componente
+    * Utiliza-se dois hifens (--), ex: button--primary, button--secondary
+  Sub Components - Components dentro do principal
+    * Utiliza-se dois underscores (__), ex: button__icon, button__label
+
+  E vc pode mesclar
+
+  button
+  button__icon--rounded
+  button__icon--square
+*/
